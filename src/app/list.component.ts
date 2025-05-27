@@ -1,5 +1,5 @@
 import { Component, computed, effect, input, signal } from '@angular/core';
-import type { User, ModifiedUser } from './models';
+import { User, ModifiedUser } from './models';
 
 @Component({
   selector: 'app-user-list',
