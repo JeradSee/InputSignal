@@ -1,22 +1,15 @@
 import { Component, computed, effect, input, signal } from '@angular/core';
-import { User, ModifiedUser } from './models';
+import type { User, ModifiedUser } from './models';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  template: `
-    <input (input)="updateQuery($event)" placeholder="Start typing..." />
-    <ul>
-      @for (user of filteredUsers(); track user.id) {
-        <li>{{ user.displayName }}</li>
-      }
-    </ul>
-  `,
+  templateUrl: './list.component.html',
 })
 
 export class UserListComponent {
 
-  userList = input.required({
+  userList = input([], {
     alias: 'users',
     transform: concatUserNames
   });
@@ -29,7 +22,7 @@ export class UserListComponent {
   }
 
   protected filteredUsers = computed(() =>
-    this.userList().filter(({ displayName }) =>
+    this.userList()?.filter(({ displayName }) =>
       displayName.startsWith(this.query())
     )
   );
