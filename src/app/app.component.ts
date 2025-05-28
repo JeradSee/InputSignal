@@ -40,21 +40,6 @@ export class AppComponent {
     this.name.set('');
     this.lastName.set('');
   }
-
-  /*
-  addUser() {
-    this.users = [
-      ...this.users,
-      {
-        id: 5,
-        name: 'Brown',
-        lastName: 'Bear',
-        username: 'brown.bear',
-      },
-    ];
-    console.log('Current Users', this.users);
-  }
-  */
 };
 
 function generateUsername(name: string, lastName: string): string {

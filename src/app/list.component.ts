@@ -41,7 +41,7 @@ export class UserListComponent {
   }
 }
 
-// Function to concatenate users so we can search by first + last
+// Function to concatenate users
 function concatUserNames(users: User[]): ModifiedUser[] {
   return users.map(({ name, lastName, ...user }) => ({
     ...user,
