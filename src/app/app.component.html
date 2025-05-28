@@ -1,4 +1,8 @@
+<h2>Add New User</h2>
 <section class="header">
-  <button (click)="addUser()">Add Brown Bear</button>
+  <input class="inputName" type = "text" placeholder="First Name" [value]="name()" (input)="name.set($any($event.target).value)" />
+  <input class="inputName" type = "text" placeholder="Last Name" [value]="lastName()" (input)="lastName.set($any($event.target).value)" />
+  <button (click)="addUser()">Add User</button>
+  <hr>
 </section>
-<app-user-list [users]="users" />
+<app-user-list [users]="users()" />

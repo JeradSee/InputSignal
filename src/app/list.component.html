@@ -1,3 +1,5 @@
+<h2>Filter Users</h2>
+
 <input (input)="updateQuery($event)" placeholder="Start typing..." />
     <ul>
         @for (user of filteredUsers(); track user.id) {
